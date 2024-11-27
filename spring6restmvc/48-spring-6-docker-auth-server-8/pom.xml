@@ -68,7 +68,7 @@
                             <goal>build-image</goal>
                         </goals>
                         <configuration>
-                            <imageName>elphasg7/spring-6-auth-server</imageName>
+                            <imageName>spring-6-auth-server</imageName>
                         </configuration>
                     </execution>
                 </executions>
