@@ -15,7 +15,7 @@ spring:
           uri: http://reactive:8080
           predicates:
             - Path=/api/v2/*
-        - id: 30-spring-6-reactive-mongocd..
+        - id: 30-spring-6-reactive-mongo
           uri: http://reactive-mongo:8080
           predicates:
             - Path=/api/v3/*
