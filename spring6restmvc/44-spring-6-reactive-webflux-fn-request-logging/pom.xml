@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.nash.reactive</groupId>
-	<artifactId>30-spring-6-reactive-mongo</artifactId>
+	<artifactId>spring-6-reactive-mongo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>30-spring-6-reactive-mongo</name>
+	<name>spring-6-reactive-mongo</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>

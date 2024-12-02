@@ -2,21 +2,21 @@ services:
   mysql:
     container_name: mysql
     image: mysql:8
-    platform: linux/amd64
+    platform: linux/arm64
     environment:
       MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: restdb
       MYSQL_USER: restadmin
       MYSQL_PASSWORD: password
     expose:
-      - "3306"
+     - "3306"
   mongo:
     container_name: mongo
     image: mongo
-    platform: linux/amd64
+    platform: linux/arm64
     environment:
-      - MONGO_INITDB_ROOT_USERNAME=root
-      - MONGO_INITDB_ROOT_PASSWORD=example
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
     expose:
       - "27017"
   auth-server:
@@ -34,7 +34,7 @@ services:
     environment:
       - SPRING_PROFILES_ACTIVE=localmysql
       - SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_ISSUER_URI=http://auth-server:9000
-      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/restdb
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/restdb    
       - SERVER_PORT=8080
     depends_on:
       - mysql
@@ -43,12 +43,12 @@ services:
     image: spring-6-reactive:0.0.1-SNAPSHOT
     platform: linux/amd64
     expose:
-      - 8080
+     - 8080
     environment:
       - SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_ISSUER_URI=http://auth-server:9000
   reactive-mongo:
     container_name: reactive-mongo
-    image: spring-6-reactive-mongo:0.0.1-SNAPSHOT
+    image: reactive-mongo:0.0.1-SNAPSHOT
     platform: linux/amd64
     expose:
       - 8080
@@ -73,7 +73,40 @@ services:
       - auth-server
       - rest-mvc
       - reactive
-      - reactive-mongo
+      - reactive-mongo      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
