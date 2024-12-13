@@ -1,7 +1,9 @@
-package guru.springframework.spring6restmvc.model;
+package guru.springframework.spring6restmvcapi.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.sql.Timestamp;
@@ -10,6 +12,8 @@ import java.util.UUID;
 
 @Builder
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class BeerOrderDTO {
 
 

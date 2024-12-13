@@ -1,23 +1,18 @@
-package guru.springframework.spring6restmvc.model;
+package guru.springframework.spring6restmvcapi.model;
 
-import guru.springframework.spring6restmvc.entities.Beer;
-import guru.springframework.spring6restmvc.entities.BeerOrder;
-import jakarta.persistence.*;
-import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.GenericGenerator;
-import org.hibernate.annotations.JdbcTypeCode;
-import org.hibernate.annotations.UpdateTimestamp;
-import org.hibernate.type.SqlTypes;
+import lombok.NoArgsConstructor;
 
 import java.sql.Timestamp;
 import java.util.UUID;
 
 @Builder
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class BeerOrderLineDTO {
 
 
@@ -34,4 +29,5 @@ public class BeerOrderLineDTO {
      @Min(value = 1, message = "Quantity on hand must be greater than 0")
     private Integer orderQuantity;
     private Integer quantityAllocated;
+    private BeerOrderLineStatus orderLineStatus;
 }

@@ -16,8 +16,8 @@
  */
 package guru.springframework.spring6restmvc.entities;
 
+import guru.springframework.spring6restmvcapi.model.BeerOrderLineStatus;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import lombok.*;
 import org.hibernate.annotations.*;
@@ -70,4 +70,8 @@ public class BeerOrderLine {
     @Min(value = 1, message = "Quantity on hand must be greater than 0")
     private Integer orderQuantity = 1;
     private Integer quantityAllocated = 0;
+
+    @Builder.Default
+    @Enumerated(EnumType.STRING)
+    private BeerOrderLineStatus orderLineStatus = BeerOrderLineStatus.NEW;
 }

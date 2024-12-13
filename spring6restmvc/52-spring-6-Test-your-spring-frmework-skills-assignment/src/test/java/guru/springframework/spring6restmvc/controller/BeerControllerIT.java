@@ -7,10 +7,10 @@ import guru.springframework.spring6restmvc.events.BeerDeletedEvent;
 import guru.springframework.spring6restmvc.events.BeerPatchedEvent;
 import guru.springframework.spring6restmvc.events.BeerUpdatedEvent;
 import guru.springframework.spring6restmvc.mappers.BeerMapper;
-import guru.springframework.spring6restmvc.model.BeerDTO;
-import guru.springframework.spring6restmvc.model.BeerStyle;
 import guru.springframework.spring6restmvc.repositories.BeerOrderRepository;
 import guru.springframework.spring6restmvc.repositories.BeerRepository;
+import guru.springframework.spring6restmvcapi.model.BeerDTO;
+import guru.springframework.spring6restmvcapi.model.BeerStyle;
 import lombok.val;
 import org.hamcrest.core.IsNull;
 import org.junit.jupiter.api.Assertions;
@@ -19,7 +19,6 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.context.ApplicationEvent;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.MediaType;
@@ -38,7 +37,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-import static org.assertj.core.api.Assertions.*;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.core.Is.is;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -84,7 +82,7 @@ class BeerControllerIT {
 
     @Test
     void testCreateBeerMVC() throws Exception{
-        val beerDTO =BeerDTO.builder()
+        val beerDTO = BeerDTO.builder()
                 .beerName("New Beer")
                 .beerStyle(BeerStyle.IPA)
                 .upc("123098")
